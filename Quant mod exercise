@@ -1,0 +1,9 @@
+tw2330=getSymbols("2330.TW",auto.assign=FALSE)
+chartSeries(tw2330)
+chartSeries(tw2330,theme = "white")
+chartSeries(tw2330,theme = "white",TA="addSMA(5);addSMA(20);addCCI(20)")
+ma5=SMA(tw2330$"2330.TW.Close",n=5)
+ma20=SMA(tw2330$"2330.TW.Close",n=20)
+CCI20=CCI(tw2330$"2330.TW.Close",n=20)
+ma5[ma5>ma20]
+index(ma5[ma5>ma20])
